@@ -6,9 +6,17 @@ const Company = () => {
   return (
     <>
       <div>
-        <h2>Fique por Dentro</h2>
+        <h2>Cadastro de empresa</h2>
       </div>
-      <Crud />
+      <Crud
+        url="/companies"
+        data={{
+          structure: [
+            { column: 'title', alias: 'Título' },
+            { column: 'cnpj', alias: 'CNPJ' },
+          ],
+        }}
+      />
     </>
   );
 };
