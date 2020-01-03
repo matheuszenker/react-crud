@@ -12,7 +12,11 @@ const TableHeader = ({ structure }) => {
 };
 
 TableHeader.propTypes = {
-  structure: PropTypes.arrayOf(PropTypes.object),
+  structure: PropTypes.arrayOf(
+    PropTypes.shape({
+      alias: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default TableHeader;
