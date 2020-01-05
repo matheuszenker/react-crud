@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import TableHeader from './components/TableHeader';
+import TableBody from './components/TableBody';
 // import { Container } from './styles';
 
 export default class Crud extends Component {
+  state = {
+    data: [],
+  };
+
   componentDidMount() {
-    console.log(this.props.data.structure);
+    axios.get(`http://localhost:3001/companies`).then(res => {
+      const { data } = res;
+      this.setState({ data });
+    });
   }
 
   render() {
@@ -15,7 +24,9 @@ export default class Crud extends Component {
         <thead>
           <TableHeader structure={this.props.data.structure} />
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <TableBody data={this.state.data} />
+        </tbody>
       </table>
     );
   }
