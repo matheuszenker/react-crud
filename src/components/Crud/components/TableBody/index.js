@@ -28,6 +28,7 @@ TableBody.propTypes = {
       column: PropTypes.string.isRequired,
     })
   ),
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default TableBody;
