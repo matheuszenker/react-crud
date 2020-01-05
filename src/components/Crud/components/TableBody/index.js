@@ -1,16 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // import { Container } from './styles';
 
-const TableBody = ({ data }) => {
+const TableBody = ({ data, structure }) => {
+  console.log(structure);
   const lines = data.map(line => (
     <tr key={line.id}>
-      <td>{line.title}</td>
-      <td>{line.cnpj}</td>
+      {structure.map((struct, index) => (
+        <td key={`${line.id}-${index}`}>{line[struct.column]}</td>
+      ))}
     </tr>
   ));
 
-  return lines;
+  return data.length ? (
+    lines
+  ) : (
+    <tr>
+      <td>Carregando...</td>
+    </tr>
+  );
+};
+
+TableBody.propTypes = {
+  structure: PropTypes.arrayOf(
+    PropTypes.shape({
+      column: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default TableBody;

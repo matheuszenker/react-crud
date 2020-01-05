@@ -19,13 +19,16 @@ export default class Crud extends Component {
   }
 
   render() {
+    const { data } = this.state;
+    const { structure } = this.props.data;
+
     return (
       <table>
         <thead>
-          <TableHeader structure={this.props.data.structure} />
+          <TableHeader structure={structure} />
         </thead>
         <tbody>
-          <TableBody data={this.state.data} />
+          <TableBody data={data} structure={structure} />
         </tbody>
       </table>
     );
