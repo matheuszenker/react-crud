@@ -27,7 +27,7 @@ TableBody.propTypes = {
     PropTypes.shape({
       column: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
   data: PropTypes.arrayOf(PropTypes.object),
 };
 

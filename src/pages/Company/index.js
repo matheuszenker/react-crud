@@ -9,7 +9,7 @@ const Company = () => {
         <h2>Cadastro de empresa</h2>
       </div>
       <Crud
-        url="/companies"
+        url="http://localhost:3001/companies"
         data={{
           structure: [
             { column: 'title', alias: 'Título' },
