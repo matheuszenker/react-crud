@@ -28,7 +28,7 @@ export default class Crud extends Component {
 
   render() {
     const { data } = this.state;
-    const { structure } = this.props.data;
+    const { structure } = this.props;
 
     if (this.state.showForm) {
       return <Form handleForm={this.handleForm} structure={structure} />;
@@ -54,7 +54,5 @@ export default class Crud extends Component {
 
 Crud.propTypes = {
   url: PropTypes.string.isRequired,
-  data: PropTypes.shape({
-    structure: PropTypes.arrayOf(PropTypes.object),
-  }),
+  structure: PropTypes.arrayOf(PropTypes.object),
 };
