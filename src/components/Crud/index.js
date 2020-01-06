@@ -35,14 +35,16 @@ export default class Crud extends Component {
   };
 
   handlePrevPage = () => {
-    this.setState(
-      prevState => ({
-        currentPage: prevState.currentPage - 1,
-      }),
-      () => {
-        this.getData();
-      }
-    );
+    if (this.state.currentPage > 1) {
+      this.setState(
+        prevState => ({
+          currentPage: prevState.currentPage - 1,
+        }),
+        () => {
+          this.getData();
+        }
+      );
+    }
   };
 
   handleNextPage = () => {
