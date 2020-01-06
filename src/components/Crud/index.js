@@ -11,19 +11,49 @@ export default class Crud extends Component {
   state = {
     data: [],
     showForm: false,
+    currentPage: 1,
   };
 
   componentDidMount() {
-    axios.get(this.props.url).then(res => {
-      const { data } = res;
+    this.getData();
+  }
+
+  getData = () => {
+    const { currentPage } = this.state;
+
+    axios.get(`${this.props.url}?_page=${currentPage}`).then(res => {
+      const { data, headers } = res;
+      console.log(headers);
       this.setState({ data });
     });
-  }
+  };
 
   handleForm = () => {
     this.setState(prevState => ({
       showForm: !prevState.showForm,
     }));
+  };
+
+  handlePrevPage = () => {
+    this.setState(
+      prevState => ({
+        currentPage: prevState.currentPage - 1,
+      }),
+      () => {
+        this.getData();
+      }
+    );
+  };
+
+  handleNextPage = () => {
+    this.setState(
+      prevState => ({
+        currentPage: prevState.currentPage + 1,
+      }),
+      () => {
+        this.getData();
+      }
+    );
   };
 
   render() {
@@ -46,6 +76,12 @@ export default class Crud extends Component {
               <TableBody data={data} structure={structure} />
             </tbody>
           </table>
+          <div>
+            <button onClick={this.handlePrevPage}>Prev</button>
+          </div>
+          <div>
+            <button onClick={this.handleNextPage}>Next</button>
+          </div>
         </>
       );
     }

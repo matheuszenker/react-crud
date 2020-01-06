@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 // import { Container } from './styles';
 
 const TableBody = ({ data, structure }) => {
-  console.log(structure);
   const lines = data.map(line => (
     <tr key={line.id}>
       {structure.map((struct, index) => (
@@ -17,7 +16,7 @@ const TableBody = ({ data, structure }) => {
     lines
   ) : (
     <tr>
-      <td>Carregando...</td>
+      <td colSpan="100">No data found</td>
     </tr>
   );
 };
