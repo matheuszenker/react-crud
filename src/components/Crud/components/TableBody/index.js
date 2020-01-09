@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 const TableBody = ({ data, structure }) => {
   const lines = data.map(line => (
     <tr key={line.id}>
-      {structure.map((struct, index) => (
-        <td key={`${line.id}-${index}`}>{line[struct.column]}</td>
-      ))}
+      {structure.map((struct, index) => {
+        console.log(line[struct.column]);
+        return <td key={`${line.id}-${index}`}>{line[struct.column]}</td>;
+      })}
     </tr>
   ));
 

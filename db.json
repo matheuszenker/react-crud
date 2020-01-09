@@ -1,22 +1,112 @@
 {
   "companies": [
-    { "id": 1, "title": "Empresa 1", "cnpj": "90.207.695/0001-70" },
-    { "id": 2, "title": "Empresa 2", "cnpj": "90.207.695/0001-72" },
-    { "id": 3, "title": "Empresa 3", "cnpj": "90.207.695/0001-73" },
-    { "id": 4, "title": "Empresa 4", "cnpj": "90.207.695/0001-74" },
-    { "id": 5, "title": "Empresa 5", "cnpj": "90.207.695/0001-75" },
-    { "id": 6, "title": "Empresa 6", "cnpj": "90.207.695/0001-76" },
-    { "id": 7, "title": "Empresa 7", "cnpj": "90.207.695/0001-77" },
-    { "id": 8, "title": "Empresa 8", "cnpj": "90.207.695/0001-78" },
-    { "id": 9, "title": "Empresa 9", "cnpj": "90.207.695/0001-79" },
-    { "id": 10, "title": "Empresa 1", "cnpj": "90.207.695/0001-70" },
-    { "id": 11, "title": "Empresa 2", "cnpj": "90.207.695/0001-72" },
-    { "id": 12, "title": "Empresa 3", "cnpj": "90.207.695/0001-73" },
-    { "id": 13, "title": "Empresa 4", "cnpj": "90.207.695/0001-74" },
-    { "id": 14, "title": "Empresa 5", "cnpj": "90.207.695/0001-75" },
-    { "id": 15, "title": "Empresa 6", "cnpj": "90.207.695/0001-76" },
-    { "id": 16, "title": "Empresa 7", "cnpj": "90.207.695/0001-77" },
-    { "id": 17, "title": "Empresa 8", "cnpj": "90.207.695/0001-78" },
-    { "id": 18, "title": "Empresa 9", "cnpj": "90.207.695/0001-79" }
+    {
+      "id": 1,
+      "title": "Empresa 1",
+      "cnpj": "90.207.695/0001-70",
+      "entity_type": 0
+    },
+    {
+      "id": 2,
+      "title": "Empresa 2",
+      "cnpj": "90.207.695/0001-72",
+      "entity_type": 1
+    },
+    {
+      "id": 3,
+      "title": "Empresa 3",
+      "cnpj": "90.207.695/0001-73",
+      "entity_type": 0
+    },
+    {
+      "id": 4,
+      "title": "Empresa 4",
+      "cnpj": "90.207.695/0001-74",
+      "entity_type": 0
+    },
+    {
+      "id": 5,
+      "title": "Empresa 5",
+      "cnpj": "90.207.695/0001-75",
+      "entity_type": 0
+    },
+    {
+      "id": 6,
+      "title": "Empresa 6",
+      "cnpj": "90.207.695/0001-76",
+      "entity_type": 0
+    },
+    {
+      "id": 7,
+      "title": "Empresa 7",
+      "cnpj": "90.207.695/0001-77",
+      "entity_type": 0
+    },
+    {
+      "id": 8,
+      "title": "Empresa 8",
+      "cnpj": "90.207.695/0001-78",
+      "entity_type": 0
+    },
+    {
+      "id": 9,
+      "title": "Empresa 9",
+      "cnpj": "90.207.695/0001-79",
+      "entity_type": 0
+    },
+    {
+      "id": 10,
+      "title": "Empresa 1",
+      "cnpj": "90.207.695/0001-70",
+      "entity_type": 0
+    },
+    {
+      "id": 11,
+      "title": "Empresa 2",
+      "cnpj": "90.207.695/0001-72",
+      "entity_type": 0
+    },
+    {
+      "id": 12,
+      "title": "Empresa 3",
+      "cnpj": "90.207.695/0001-73",
+      "entity_type": 0
+    },
+    {
+      "id": 13,
+      "title": "Empresa 4",
+      "cnpj": "90.207.695/0001-74",
+      "entity_type": 0
+    },
+    {
+      "id": 14,
+      "title": "Empresa 5",
+      "cnpj": "90.207.695/0001-75",
+      "entity_type": 0
+    },
+    {
+      "id": 15,
+      "title": "Empresa 6",
+      "cnpj": "90.207.695/0001-76",
+      "entity_type": 0
+    },
+    {
+      "id": 16,
+      "title": "Empresa 7",
+      "cnpj": "90.207.695/0001-77",
+      "entity_type": 0
+    },
+    {
+      "id": 17,
+      "title": "Empresa 8",
+      "cnpj": "90.207.695/0001-78",
+      "entity_type": 0
+    },
+    {
+      "id": 18,
+      "title": "Empresa 9",
+      "cnpj": "90.207.695/0001-79",
+      "entity_type": 0
+    }
   ]
 }

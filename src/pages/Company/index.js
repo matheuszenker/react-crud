@@ -13,6 +13,18 @@ const Company = () => {
         structure={[
           { column: 'title', alias: 'Title' },
           { column: 'cnpj', alias: 'CNPJ', type: 'number' },
+          {
+            column: 'entity_type',
+            alias: 'Entity Type',
+            type: 'select',
+            select: {
+              options: [
+                { key: 0, value: 'Física' },
+                { key: 1, value: 'Jurídica' },
+              ],
+              emptyOption: 'Selecione um valor',
+            },
+          },
         ]}
       />
     </>
