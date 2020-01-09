@@ -12,7 +12,7 @@ const Company = () => {
         url="http://localhost:3001/companies"
         structure={[
           { column: 'title', alias: 'Title' },
-          { column: 'cnpj', alias: 'CNPJ' },
+          { column: 'cnpj', alias: 'CNPJ', type: 'number' },
         ]}
       />
     </>
