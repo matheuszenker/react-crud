@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import TableHeader from './components/TableHeader';
-import TableBody from './components/TableBody';
+import Table from './components/Table';
 import Form from './components/Form';
 // import { Container } from './styles';
 
@@ -66,25 +65,13 @@ export default class Crud extends Component {
       return <Form handleForm={this.handleForm} structure={structure} />;
     } else {
       return (
-        <>
-          <div>
-            <button onClick={this.handleForm}>Add</button>
-          </div>
-          <table>
-            <thead>
-              <TableHeader structure={structure} />
-            </thead>
-            <tbody>
-              <TableBody data={data} structure={structure} />
-            </tbody>
-          </table>
-          <div>
-            <button onClick={this.handlePrevPage}>Prev</button>
-          </div>
-          <div>
-            <button onClick={this.handleNextPage}>Next</button>
-          </div>
-        </>
+        <Table
+          handleForm={this.handleForm}
+          data={data}
+          structure={structure}
+          nextPage={this.handleNextPage}
+          previousPage={this.handlePrevPage}
+        />
       );
     }
   }
