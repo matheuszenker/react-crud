@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import MaterialUI from '../MaterialUI';
+
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
 import Input from './components/Input';
 
 // import { Container } from './styles';
@@ -15,8 +19,9 @@ const Form = ({ handleForm, structure }) => {
 
   return (
     <>
+      <MaterialUI />
       <div>
-        <button onClick={handleForm}>Back</button>
+        <ArrowBackIcon onClick={handleForm} />
       </div>
       <div>
         <form>
