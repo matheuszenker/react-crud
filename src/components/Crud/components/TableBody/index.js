@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import { Container } from './styles';
+import Input from './components/Input';
 
 const TableBody = ({ data, structure }) => {
   const lines = data.map(line => (
     <tr key={line.id}>
       {structure.map((struct, index) => {
-        console.log(line[struct.column]);
-        return <td key={`${line.id}-${index}`}>{line[struct.column]}</td>;
+        return (
+          <td key={`${line.id}-${index}`}>
+            <Input value={line[struct.column]} struct={struct} />
+          </td>
+        );
       })}
     </tr>
   ));
