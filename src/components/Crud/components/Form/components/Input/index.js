@@ -8,11 +8,11 @@ import Select from './select';
 const Input = ({ field }) => {
   switch (field.type) {
     case 'number':
-      return <Number placeholder={field.alias} name={field.column} />;
+      return <Number label={field.alias} name={field.column} />;
     case 'select':
       return <Select name={field.column} select={field.select} />;
     default:
-      return <Text placeholder={field.alias} name={field.column} />;
+      return <Text label={field.alias} name={field.column} />;
   }
 };
 

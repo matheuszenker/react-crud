@@ -12,7 +12,6 @@ import Input from './components/Input';
 const Form = ({ handleForm, structure }) => {
   const fields = structure.map((field, index) => (
     <div key={index}>
-      <label>{field.alias}</label>
       <Input field={field} />
     </div>
   ));

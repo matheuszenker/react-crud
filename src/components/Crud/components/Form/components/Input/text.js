@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TextField from '@material-ui/core/TextField';
 // import { Container } from './styles';
 
-const Text = ({ placeholder, name }) => (
-  <input placeholder={placeholder} name={name} />
+const Text = ({ label, name }) => (
+  <TextField
+    id="outlined-basic"
+    label={label}
+    variant="outlined"
+    size="small"
+    name={name}
+  />
 );
 
 Text.propTypes = {
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
+  label: PropTypes.string,
 };
 
 export default Text;
