@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import MaterialUI from '../MaterialUI';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Button from '@material-ui/core/Button';
 
 import Input from './components/Input';
 
@@ -26,7 +27,9 @@ const Form = ({ handleForm, structure }) => {
         <form>
           {fields}
           <div>
-            <button>Send</button>
+            <Button variant="contained" color="primary">
+              Send
+            </Button>
           </div>
         </form>
       </div>

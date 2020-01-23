@@ -10,7 +10,9 @@ const Input = ({ field }) => {
     case 'number':
       return <Number label={field.alias} name={field.column} />;
     case 'select':
-      return <Select name={field.column} select={field.select} />;
+      return (
+        <Select label={field.alias} name={field.column} select={field.select} />
+      );
     default:
       return <Text label={field.alias} name={field.column} />;
   }
