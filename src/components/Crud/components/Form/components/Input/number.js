@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField';
 
 const Number = ({ label, name }) => (
   <TextField
-    id="outlined-basic"
     label={label}
     variant="outlined"
     size="small"

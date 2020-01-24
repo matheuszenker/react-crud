@@ -20,11 +20,7 @@ const Select = ({ name, select, label }) => {
   return (
     <FormControl variant="outlined">
       <InputLabel id="demo-simple-select-outlined-label">{label}</InputLabel>
-      <SelectUI
-        labelId="demo-simple-select-outlined-label"
-        id="demo-simple-select-outlined"
-        name={name}
-      >
+      <SelectUI labelId="demo-simple-select-outlined-label" name={name}>
         <MenuItem>
           <em>{select.emptyOption || 'Select a value'}</em>
         </MenuItem>

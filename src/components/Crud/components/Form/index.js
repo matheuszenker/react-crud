@@ -5,35 +5,39 @@ import MaterialUI from '../MaterialUI';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 import Input from './components/Input';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const Form = ({ handleForm, structure }) => {
   const fields = structure.map((field, index) => (
-    <div key={index}>
+    <Grid item xs={12} key={index}>
       <Input field={field} />
-    </div>
+    </Grid>
   ));
 
   return (
-    <>
+    <Container>
       <MaterialUI />
-      <div>
+      <div className="arrow-back">
         <ArrowBackIcon onClick={handleForm} />
+        Back
       </div>
       <div>
         <form>
-          {fields}
-          <div>
-            <Button variant="contained" color="primary">
-              Send
-            </Button>
-          </div>
+          <Grid container spacing={3}>
+            {fields}
+            <Grid item xs={12}>
+              <Button variant="contained" color="primary">
+                Send
+              </Button>
+            </Grid>
+          </Grid>
         </form>
       </div>
-    </>
+    </Container>
   );
 };
 
