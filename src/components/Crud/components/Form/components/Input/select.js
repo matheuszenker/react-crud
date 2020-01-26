@@ -18,7 +18,7 @@ const Options = ({ options }) => {
 
 const Select = ({ name, select, label }) => {
   return (
-    <FormControl variant="outlined">
+    <FormControl variant="outlined" fullWidth size="small">
       <InputLabel id="demo-simple-select-outlined-label">{label}</InputLabel>
       <SelectUI labelId="demo-simple-select-outlined-label" name={name}>
         <MenuItem>

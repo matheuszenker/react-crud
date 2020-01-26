@@ -13,7 +13,7 @@ import { Container } from './styles';
 
 const Form = ({ handleForm, structure }) => {
   const fields = structure.map((field, index) => (
-    <Grid item xs={12} key={index}>
+    <Grid item md={4} xs={12} key={index}>
       <Input field={field} />
     </Grid>
   ));
@@ -21,8 +21,8 @@ const Form = ({ handleForm, structure }) => {
   return (
     <Container>
       <MaterialUI />
-      <div className="arrow-back">
-        <ArrowBackIcon onClick={handleForm} />
+      <div className="arrow-back" onClick={handleForm}>
+        <ArrowBackIcon />
         Back
       </div>
       <div>

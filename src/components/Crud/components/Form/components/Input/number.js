@@ -12,6 +12,7 @@ const Number = ({ label, name }) => (
     size="small"
     name={name}
     type="number"
+    fullWidth
   />
 );
 
