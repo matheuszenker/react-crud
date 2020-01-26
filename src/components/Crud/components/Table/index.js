@@ -1,14 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
+
 import TableHeader from './components/TableHeader';
 import TableBody from './components/TableBody';
-// import { Container } from './styles';
+
+import MaterialUI from '../MaterialUI';
+
+import { Container } from './styles';
 
 const Table = ({ handleForm, structure, data, nextPage, previousPage }) => (
-  <>
+  <Container>
+    <MaterialUI />
     <div>
-      <button onClick={handleForm}>Add</button>
+      <Button
+        startIcon={<AddIcon />}
+        variant="contained"
+        color="primary"
+        onClick={handleForm}
+      >
+        Add
+      </Button>
     </div>
     <table>
       <thead>
@@ -24,7 +38,7 @@ const Table = ({ handleForm, structure, data, nextPage, previousPage }) => (
     <div>
       <button onClick={nextPage}>Next</button>
     </div>
-  </>
+  </Container>
 );
 
 Table.propTypes = {
