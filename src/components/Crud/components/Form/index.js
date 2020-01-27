@@ -6,6 +6,9 @@ import MaterialUI from '../MaterialUI';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+
+import MomentUtils from '@date-io/moment';
 
 import Input from './components/Input';
 
@@ -28,7 +31,9 @@ const Form = ({ handleForm, structure }) => {
       <div>
         <form>
           <Grid container spacing={3}>
-            {fields}
+            <MuiPickersUtilsProvider utils={MomentUtils}>
+              {fields}
+            </MuiPickersUtilsProvider>
             <Grid item xs={12}>
               <Button variant="contained" color="primary">
                 Send

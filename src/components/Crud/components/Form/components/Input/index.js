@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 import Text from './text';
 import Number from './number';
 import Select from './select';
+import Date from './date';
 
 const Input = ({ field }) => {
   switch (field.type) {
+    case 'date':
+      return <Date label={field.alias} name={field.column} />;
     case 'number':
       return <Number label={field.alias} name={field.column} />;
     case 'select':

@@ -25,6 +25,7 @@ const Company = () => {
               emptyOption: 'Selecione um valor',
             },
           },
+          { column: 'foundation_date', alias: 'Foundation date', type: 'date' },
         ]}
       />
     </>
