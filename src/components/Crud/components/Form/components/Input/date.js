@@ -5,7 +5,7 @@ import { KeyboardDatePicker } from '@material-ui/pickers';
 
 // import { Container } from './styles';
 
-const Date = ({ label, name }) => (
+const Date = ({ label, name, handleFieldValue, values }) => (
   <KeyboardDatePicker
     autoOk
     variant="inline"
@@ -13,6 +13,8 @@ const Date = ({ label, name }) => (
     inputVariant="outlined"
     label={label}
     name={name}
+    value={values[name]}
+    onChange={change => handleFieldValue(name, change)}
     format="MM/dd/yyyy"
     InputAdornmentProps={{ position: 'start' }}
     fullWidth
@@ -22,6 +24,7 @@ const Date = ({ label, name }) => (
 Date.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
+  handleFieldValue: PropTypes.func.isRequired,
 };
 
 export default Date;

@@ -6,10 +6,17 @@ import Number from './number';
 import Select from './select';
 import Date from './date';
 
-const Input = ({ field }) => {
+const Input = ({ field, handleFieldValue, values }) => {
   switch (field.type) {
     case 'date':
-      return <Date label={field.alias} name={field.column} />;
+      return (
+        <Date
+          label={field.alias}
+          name={field.column}
+          handleFieldValue={handleFieldValue}
+          values={values}
+        />
+      );
     case 'number':
       return <Number label={field.alias} name={field.column} />;
     case 'select':
@@ -38,6 +45,8 @@ Input.propTypes = {
       emptyOption: PropTypes.string,
     }),
   }),
+  handleFieldValue: PropTypes.func.isRequired,
+  values: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Input;
