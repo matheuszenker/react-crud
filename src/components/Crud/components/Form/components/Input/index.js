@@ -24,7 +24,14 @@ const Input = ({ field, handleFieldValue, values }) => {
         <Select label={field.alias} name={field.column} select={field.select} />
       );
     default:
-      return <Text label={field.alias} name={field.column} />;
+      return (
+        <Text
+          label={field.alias}
+          name={field.column}
+          handleFieldValue={handleFieldValue}
+          values={values}
+        />
+      );
   }
 };
 
