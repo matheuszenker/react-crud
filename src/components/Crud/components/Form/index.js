@@ -15,17 +15,21 @@ import Input from './components/Input';
 import { Container } from './styles';
 
 class Form extends Component {
-  state = {
-    fieldValues: [],
-  };
+  constructor(props) {
+    super(props);
 
-  handleFieldValue(fieldName, value) {
+    this.state = {
+      fieldValues: [],
+    };
+  }
+
+  handleFieldValue = (fieldName, value) => {
     const { fieldValues } = this.state;
 
     fieldValues[fieldName] = value;
 
     this.setState({ fieldValues });
-  }
+  };
 
   render() {
     const { fieldValues } = this.state;
