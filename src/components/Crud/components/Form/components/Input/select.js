@@ -7,15 +7,6 @@ import SelectUI from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
 // import { Container } from './styles';
-
-const Options = ({ options }) => {
-  return options.map(option => (
-    <MenuItem key={option.key} value={option.key}>
-      {option.value}
-    </MenuItem>
-  ));
-};
-
 const Select = ({ name, select, label, handleFieldValue, values }) => {
   const inputLabel = React.useRef(null);
   const [labelWidth, setLabelWidth] = useState(0);
@@ -28,15 +19,21 @@ const Select = ({ name, select, label, handleFieldValue, values }) => {
     <FormControl variant="outlined" fullWidth size="small">
       <InputLabel ref={inputLabel}>{label}</InputLabel>
       <SelectUI
-        name={name}
-        value={values[name]}
+        value={values[name] || ''}
         onChange={event => handleFieldValue(name, event.target.value)}
         labelWidth={labelWidth}
+        inputProps={{
+          name: 'name',
+        }}
       >
         <MenuItem>
           <em>{select.emptyOption || 'Select a value'}</em>
         </MenuItem>
-        <Options options={select.options} />
+        {select.options.map(option => (
+          <MenuItem key={option.key} value={option.key}>
+            {option.value}
+          </MenuItem>
+        ))}
       </SelectUI>
     </FormControl>
   );

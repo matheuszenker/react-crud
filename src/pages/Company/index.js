@@ -19,8 +19,8 @@ const Company = () => {
             type: 'select',
             select: {
               options: [
-                { key: 0, value: 'Física' },
-                { key: 1, value: 'Jurídica' },
+                { key: 1, value: 'Física' },
+                { key: 2, value: 'Jurídica' },
               ],
               emptyOption: 'Selecione um valor',
             },
