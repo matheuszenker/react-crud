@@ -12,7 +12,7 @@ const Date = ({ label, name, handleFieldValue, values }) => {
     moment.locale('pt-br');
 
     handleFieldValue(name, moment());
-  }, []);
+  }, [handleFieldValue, name]);
 
   return (
     <DatePicker

@@ -21,7 +21,13 @@ const Input = ({ field, handleFieldValue, values }) => {
       return <Number label={field.alias} name={field.column} />;
     case 'select':
       return (
-        <Select label={field.alias} name={field.column} select={field.select} />
+        <Select
+          label={field.alias}
+          name={field.column}
+          select={field.select}
+          handleFieldValue={handleFieldValue}
+          values={values}
+        />
       );
     default:
       return (

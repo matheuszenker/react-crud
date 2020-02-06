@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 // import { Container } from './styles';
 
-const Number = ({ label, name, handleFieldValue, values }) => (
+const Number = ({ label, name }) => (
   <TextField
     label={label}
     variant="outlined"
@@ -19,8 +19,6 @@ const Number = ({ label, name, handleFieldValue, values }) => (
 Number.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
-  handleFieldValue: PropTypes.func.isRequired,
-  values: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Number;

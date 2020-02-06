@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
@@ -16,11 +16,23 @@ const Options = ({ options }) => {
   ));
 };
 
-const Select = ({ name, select, label }) => {
+const Select = ({ name, select, label, handleFieldValue, values }) => {
+  const inputLabel = React.useRef(null);
+  const [labelWidth, setLabelWidth] = useState(0);
+
+  useEffect(() => {
+    setLabelWidth(inputLabel.current.offsetWidth);
+  }, []);
+
   return (
     <FormControl variant="outlined" fullWidth size="small">
-      <InputLabel id="demo-simple-select-outlined-label">{label}</InputLabel>
-      <SelectUI labelId="demo-simple-select-outlined-label" name={name}>
+      <InputLabel ref={inputLabel}>{label}</InputLabel>
+      <SelectUI
+        name={name}
+        value={values[name]}
+        onChange={event => handleFieldValue(name, event.target.value)}
+        labelWidth={labelWidth}
+      >
         <MenuItem>
           <em>{select.emptyOption || 'Select a value'}</em>
         </MenuItem>
@@ -44,6 +56,8 @@ Select.propTypes = {
       })
     ),
   }),
+  handleFieldValue: PropTypes.func.isRequired,
+  values: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Select;
