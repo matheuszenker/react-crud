@@ -12,7 +12,7 @@ const Company = () => {
         url="http://localhost:3001/companies"
         structure={[
           { column: 'title', alias: 'Title' },
-          { column: 'cnpj', alias: 'CNPJ', type: 'number' },
+          { column: 'cnpj', alias: 'CNPJ', type: 'number', formOnly: true },
           {
             column: 'entity_type',
             alias: 'Entity Type',

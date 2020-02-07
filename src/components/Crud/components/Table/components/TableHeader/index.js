@@ -9,11 +9,13 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 // import { Container } from './styles';
 
 const TableHeader = ({ structure }) => {
-  const columns = structure.map((column, index) => (
-    <TableCell key={index}>
-      <TableSortLabel>{column.alias}</TableSortLabel>
-    </TableCell>
-  ));
+  const columns = structure.map((column, index) => {
+    return (
+      <TableCell key={index}>
+        <TableSortLabel>{column.alias}</TableSortLabel>
+      </TableCell>
+    );
+  });
 
   return (
     <TableHead>
