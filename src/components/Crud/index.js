@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { ptBR } from '@material-ui/core/locale';
+
 import Table from './components/Table';
 import Form from './components/Form';
 // import { Container } from './styles';
@@ -61,19 +64,25 @@ export default class Crud extends Component {
     const { data } = this.state;
     const { structure } = this.props;
 
-    if (this.state.showForm) {
-      return <Form handleForm={this.handleForm} structure={structure} />;
-    } else {
-      return (
-        <Table
-          handleForm={this.handleForm}
-          data={data}
-          structure={structure}
-          nextPage={this.handleNextPage}
-          previousPage={this.handlePrevPage}
-        />
-      );
-    }
+    const theme = createMuiTheme({}, ptBR);
+
+    const formTable = () => {
+      if (this.state.showForm) {
+        return <Form handleForm={this.handleForm} structure={structure} />;
+      } else {
+        return (
+          <Table
+            handleForm={this.handleForm}
+            data={data}
+            structure={structure}
+            nextPage={this.handleNextPage}
+            previousPage={this.handlePrevPage}
+          />
+        );
+      }
+    };
+
+    return <ThemeProvider theme={theme}>{formTable()}</ThemeProvider>;
   }
 }
 

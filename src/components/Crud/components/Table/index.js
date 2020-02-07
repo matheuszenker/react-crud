@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
+import TableUI from '@material-ui/core/Table';
+import TablePagination from '@material-ui/core/TablePagination';
 
 import TableHeader from './components/TableHeader';
 import TableBody from './components/TableBody';
@@ -13,7 +15,7 @@ import { Container } from './styles';
 
 const Table = ({ handleForm, structure, data, nextPage, previousPage }) => (
   <Container>
-    <MaterialUI />
+    <MaterialUI stickyHeader />
     <div>
       <Button
         startIcon={<AddIcon />}
@@ -24,20 +26,19 @@ const Table = ({ handleForm, structure, data, nextPage, previousPage }) => (
         Add
       </Button>
     </div>
-    <table>
-      <thead>
-        <TableHeader structure={structure} />
-      </thead>
-      <tbody>
-        <TableBody data={data} structure={structure} />
-      </tbody>
-    </table>
-    <div>
-      <button onClick={previousPage}>Prev</button>
-    </div>
-    <div>
-      <button onClick={nextPage}>Next</button>
-    </div>
+    <TableUI>
+      <TableHeader structure={structure} />
+      <TableBody data={data} structure={structure} />
+    </TableUI>
+    <TablePagination
+      rowsPerPageOptions={[5, 10, 25]}
+      component="div"
+      count={100}
+      rowsPerPage={5}
+      page={0}
+      onChangePage={() => {}}
+      onChangeRowsPerPage={() => {}}
+    />
   </Container>
 );
 

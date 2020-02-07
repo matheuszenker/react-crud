@@ -1,14 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
+
 // import { Container } from './styles';
 
 const TableHeader = ({ structure }) => {
   const columns = structure.map((column, index) => (
-    <th key={index}>{column.alias}</th>
+    <TableCell key={index}>
+      <TableSortLabel>{column.alias}</TableSortLabel>
+    </TableCell>
   ));
 
-  return <tr>{columns}</tr>;
+  return (
+    <TableHead>
+      <TableRow>{columns}</TableRow>
+    </TableHead>
+  );
 };
 
 TableHeader.propTypes = {

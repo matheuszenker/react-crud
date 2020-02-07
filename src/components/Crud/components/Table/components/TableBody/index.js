@@ -1,27 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TableBodyUI from '@material-ui/core/TableBody';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+
 import Input from './components/Input';
 
 const TableBody = ({ data, structure }) => {
   const lines = data.map(line => (
-    <tr key={line.id}>
+    <TableRow key={line.id}>
       {structure.map((struct, index) => {
         return (
-          <td key={`${line.id}-${index}`}>
+          <TableCell key={`${line.id}-${index}`}>
             <Input value={line[struct.column]} struct={struct} />
-          </td>
+          </TableCell>
         );
       })}
-    </tr>
+    </TableRow>
   ));
 
   return data.length ? (
-    lines
+    <TableBodyUI>{lines}</TableBodyUI>
   ) : (
-    <tr>
-      <td colSpan="100">No data found</td>
-    </tr>
+    <TableBodyUI>
+      <TableRow>
+        <TableCell colSpan="100">No data found</TableCell>
+      </TableRow>
+    </TableBodyUI>
   );
 };
 
