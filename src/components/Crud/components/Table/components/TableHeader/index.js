@@ -17,9 +17,14 @@ const TableHeader = ({ structure }) => {
     );
   });
 
+  const actions = <TableCell>Actions</TableCell>;
+
   return (
     <TableHead>
-      <TableRow>{columns}</TableRow>
+      <TableRow>
+        {columns}
+        {actions}
+      </TableRow>
     </TableHead>
   );
 };

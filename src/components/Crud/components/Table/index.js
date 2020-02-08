@@ -26,7 +26,7 @@ const Table = ({ handleForm, structure, data, nextPage, previousPage }) => (
         Add
       </Button>
     </div>
-    <TableUI>
+    <TableUI size="small">
       <TableHeader structure={structure} />
       <TableBody data={data} structure={structure} />
     </TableUI>

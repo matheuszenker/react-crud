@@ -4,10 +4,24 @@ import PropTypes from 'prop-types';
 import TableBodyUI from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import Input from './components/Input';
 
 const TableBody = ({ data, structure }) => {
+  const actions = (
+    <TableCell>
+      <IconButton aria-label="edit">
+        <EditIcon fontSize="small" />
+      </IconButton>
+      <IconButton aria-label="delete">
+        <DeleteIcon fontSize="small" />
+      </IconButton>
+    </TableCell>
+  );
+
   const lines = data.map(line => (
     <TableRow key={line.id}>
       {structure.map((struct, index) => {
@@ -17,6 +31,7 @@ const TableBody = ({ data, structure }) => {
           </TableCell>
         );
       })}
+      {actions}
     </TableRow>
   ));
 
