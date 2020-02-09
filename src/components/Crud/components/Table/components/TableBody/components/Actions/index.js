@@ -40,7 +40,7 @@ const Actions = () => {
             Close
           </Button>
           <Button onClick={() => setOpen(false)} color="primary" autoFocus>
-            Yes
+            Confirm
           </Button>
         </DialogActions>
       </Dialog>
