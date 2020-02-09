@@ -1,130 +1,190 @@
 {
-  "companies": [
-    {
-      "id": 1,
-      "title": "Empresa 1",
-      "cnpj": "90.207.695/0001-70",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 2,
-      "title": "Empresa 2",
-      "cnpj": "90.207.695/0001-72",
-      "entity_type": 2,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 3,
-      "title": "Empresa 3",
-      "cnpj": "90.207.695/0001-73",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 4,
-      "title": "Empresa 4",
-      "cnpj": "90.207.695/0001-74",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 5,
-      "title": "Empresa 5",
-      "cnpj": "90.207.695/0001-75",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 6,
-      "title": "Empresa 6",
-      "cnpj": "90.207.695/0001-76",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 7,
-      "title": "Empresa 7",
-      "cnpj": "90.207.695/0001-77",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 8,
-      "title": "Empresa 8",
-      "cnpj": "90.207.695/0001-78",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 9,
-      "title": "Empresa 9",
-      "cnpj": "90.207.695/0001-79",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 10,
-      "title": "Empresa 10",
-      "cnpj": "90.207.695/0001-70",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 11,
-      "title": "Empresa 11",
-      "cnpj": "90.207.695/0001-72",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 12,
-      "title": "Empresa 12",
-      "cnpj": "90.207.695/0001-73",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 13,
-      "title": "Empresa 13",
-      "cnpj": "90.207.695/0001-74",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 14,
-      "title": "Empresa 14",
-      "cnpj": "90.207.695/0001-75",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 15,
-      "title": "Empresa 15",
-      "cnpj": "90.207.695/0001-76",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 16,
-      "title": "Empresa 16",
-      "cnpj": "90.207.695/0001-77",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 17,
-      "title": "Empresa 17",
-      "cnpj": "90.207.695/0001-78",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    },
-    {
-      "id": 18,
-      "title": "Empresa 18",
-      "cnpj": "90.207.695/0001-79",
-      "entity_type": 1,
-      "foundation_date": "12/31/2020"
-    }
-  ]
+  "companies": {
+    "total": 102,
+    "perPage": 20,
+    "page": 1,
+    "lastPage": 6,
+    "data": [
+      {
+        "id": 1,
+        "title": "Empresa da Talita",
+        "cnpj": "765002760001",
+        "entity_type": 1,
+        "foundation_date": "2020-02-09T03:00:00.000Z",
+        "created_at": "2020-02-09 20:25:56",
+        "updated_at": "2020-02-09 20:25:56"
+      },
+      {
+        "id": 2,
+        "title": "Second Company",
+        "cnpj": "765002760009",
+        "entity_type": 2,
+        "foundation_date": "2020-02-09T03:00:00.000Z",
+        "created_at": "2020-02-09 20:26:53",
+        "updated_at": "2020-02-09 20:28:55"
+      },
+      {
+        "id": 3,
+        "title": "Franklin Douglas",
+        "cnpj": "948717370419",
+        "entity_type": 2,
+        "foundation_date": "2027-04-06T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:00",
+        "updated_at": "2020-02-09 20:30:00"
+      },
+      {
+        "id": 4,
+        "title": "Ernest Bowman",
+        "cnpj": "785282705700",
+        "entity_type": 1,
+        "foundation_date": "2098-10-22T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:00",
+        "updated_at": "2020-02-09 20:30:00"
+      },
+      {
+        "id": 5,
+        "title": "Clarence McKinney",
+        "cnpj": "889399992418",
+        "entity_type": 1,
+        "foundation_date": "2086-04-23T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:00",
+        "updated_at": "2020-02-09 20:30:00"
+      },
+      {
+        "id": 6,
+        "title": "Timothy Jordan",
+        "cnpj": "272470710473",
+        "entity_type": 1,
+        "foundation_date": "2026-04-15T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 7,
+        "title": "Adele Green",
+        "cnpj": "296753729577",
+        "entity_type": 2,
+        "foundation_date": "2108-04-08T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 8,
+        "title": "Callie Adkins",
+        "cnpj": "943642603722",
+        "entity_type": 1,
+        "foundation_date": "2062-07-08T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 9,
+        "title": "Belle Hayes",
+        "cnpj": "738648803252",
+        "entity_type": 1,
+        "foundation_date": "2078-04-29T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 10,
+        "title": "Todd Reeves",
+        "cnpj": "274096297402",
+        "entity_type": 1,
+        "foundation_date": "2081-09-09T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 11,
+        "title": "Ann Mason",
+        "cnpj": "541134479455",
+        "entity_type": 1,
+        "foundation_date": "2026-03-20T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 12,
+        "title": "Gerald Park",
+        "cnpj": "186538868560",
+        "entity_type": 2,
+        "foundation_date": "2068-09-19T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 13,
+        "title": "Edgar Harrison",
+        "cnpj": "137885996978",
+        "entity_type": 2,
+        "foundation_date": "2028-01-08T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 14,
+        "title": "Alberta Marshall",
+        "cnpj": "362911740108",
+        "entity_type": 1,
+        "foundation_date": "2095-01-18T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 15,
+        "title": "Abbie Haynes",
+        "cnpj": "407856194325",
+        "entity_type": 1,
+        "foundation_date": "2042-03-24T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 16,
+        "title": "Leila Banks",
+        "cnpj": "111273379600",
+        "entity_type": 2,
+        "foundation_date": "2072-09-29T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 17,
+        "title": "Barry Rivera",
+        "cnpj": "425024904008",
+        "entity_type": 2,
+        "foundation_date": "2081-03-23T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 18,
+        "title": "Andre Roberts",
+        "cnpj": "319394653802",
+        "entity_type": 1,
+        "foundation_date": "2089-06-26T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 19,
+        "title": "Bobby Moss",
+        "cnpj": "997834285744",
+        "entity_type": 2,
+        "foundation_date": "2065-12-19T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      },
+      {
+        "id": 20,
+        "title": "Roger Wade",
+        "cnpj": "466751298960",
+        "entity_type": 2,
+        "foundation_date": "2033-04-11T03:00:00.000Z",
+        "created_at": "2020-02-09 20:30:01",
+        "updated_at": "2020-02-09 20:30:01"
+      }
+    ]
+  }
 }

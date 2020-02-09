@@ -23,10 +23,10 @@ export default class Crud extends Component {
   getData = () => {
     const { currentPage } = this.state;
 
-    axios.get(`${this.props.url}?_page=${currentPage}`).then(res => {
+    axios.get(`${this.props.url}?page=${currentPage}`).then(res => {
       const { data, headers } = res;
       console.log(headers);
-      this.setState({ data });
+      this.setState({ data: data.data });
     });
   };
 

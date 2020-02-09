@@ -9,7 +9,8 @@ const Company = () => {
         <h2>Companies register</h2>
       </div>
       <Crud
-        url="http://localhost:3001/companies"
+        url="http://127.0.0.1:3333/companies"
+        // url="http://localhost:3001/companies"
         structure={[
           { column: 'title', alias: 'Title' },
           { column: 'cnpj', alias: 'CNPJ', type: 'number', formOnly: true },
