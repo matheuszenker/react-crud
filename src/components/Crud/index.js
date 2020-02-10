@@ -7,6 +7,7 @@ import { ptBR } from '@material-ui/core/locale';
 
 import Table from './components/Table';
 import Form from './components/Form';
+import Alert from './components/Alert';
 // import { Container } from './styles';
 
 export default class Crud extends Component {
@@ -16,6 +17,8 @@ export default class Crud extends Component {
     showForm: false,
     currentPage: 1,
     rowsPerPage: 10,
+    alertSuccess: false,
+    alertError: false,
   };
 
   componentDidMount() {
@@ -24,13 +27,25 @@ export default class Crud extends Component {
 
   getData = () => {
     const { currentPage, rowsPerPage } = this.state;
+    const { url } = this.props;
+
+    axios.get(`${url}?page=${currentPage}&limit=${rowsPerPage}`).then(res => {
+      const { data, headers } = res;
+      console.log(headers);
+      this.setState({ data: data.data, dataTotal: data.total });
+    });
+  };
+
+  handleDelete = id => {
+    const { url } = this.props;
 
     axios
-      .get(`${this.props.url}?page=${currentPage}&limit=${rowsPerPage}`)
+      .delete(`${url}/${id}`)
       .then(res => {
-        const { data, headers } = res;
-        console.log(headers);
-        this.setState({ data: data.data, dataTotal: data.total });
+        this.setState({ alertSuccess: true }, this.getData());
+      })
+      .catch(() => {
+        this.setState({ alertError: true });
       });
   };
 
@@ -38,6 +53,14 @@ export default class Crud extends Component {
     this.setState(prevState => ({
       showForm: !prevState.showForm,
     }));
+  };
+
+  handleCloseAlertError = () => {
+    this.setState({ alertError: false });
+  };
+
+  handleCloseAlertSuccess = () => {
+    this.setState({ alertSuccess: false });
   };
 
   handlePage = (event, page) => {
@@ -51,7 +74,14 @@ export default class Crud extends Component {
   };
 
   render() {
-    const { data, currentPage, rowsPerPage, dataTotal } = this.state;
+    const {
+      data,
+      currentPage,
+      rowsPerPage,
+      dataTotal,
+      alertError,
+      alertSuccess,
+    } = this.state;
     const { structure } = this.props;
 
     const theme = createMuiTheme({}, ptBR);
@@ -70,12 +100,29 @@ export default class Crud extends Component {
             rowsPerPage={rowsPerPage}
             handlePage={this.handlePage}
             handleChangeRowsPerPage={this.handleChangeRowsPerPage}
+            handleDelete={this.handleDelete}
           />
         );
       }
     };
 
-    return <ThemeProvider theme={theme}>{formTable()}</ThemeProvider>;
+    return (
+      <ThemeProvider theme={theme}>
+        {formTable()}
+        <Alert
+          openAlert={alertError}
+          handleClose={this.handleCloseAlertError}
+          message="An error occurred."
+          severit="error"
+        />
+        <Alert
+          openAlert={alertSuccess}
+          handleClose={this.handleCloseAlertSuccess}
+          message="Item successfuly deleted."
+          severit="success"
+        />
+      </ThemeProvider>
+    );
   }
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
@@ -12,8 +13,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 // import { Container } from './styles';
 
-const Actions = () => {
+const Actions = ({ id, handleDelete }) => {
   const [open, setOpen] = useState(false);
+
+  const triggerDelete = () => {
+    handleDelete(id);
+    setOpen(false);
+  };
 
   return (
     <>
@@ -39,13 +45,18 @@ const Actions = () => {
           <Button onClick={() => setOpen(false)} color="primary">
             Close
           </Button>
-          <Button onClick={() => setOpen(false)} color="primary" autoFocus>
+          <Button onClick={() => triggerDelete()} color="primary" autoFocus>
             Confirm
           </Button>
         </DialogActions>
       </Dialog>
     </>
   );
+};
+
+Actions.propTypes = {
+  id: PropTypes.number.isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default Actions;

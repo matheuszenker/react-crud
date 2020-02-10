@@ -8,7 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 import Input from './components/Input';
 import Actions from './components/Actions';
 
-const TableBody = ({ data, structure }) => {
+const TableBody = ({ data, structure, handleDelete }) => {
   const lines = data.map(line => (
     <TableRow key={line.id}>
       {structure.map((struct, index) => {
@@ -19,7 +19,7 @@ const TableBody = ({ data, structure }) => {
         );
       })}
       <TableCell>
-        <Actions />
+        <Actions id={line.id} handleDelete={handleDelete} />
       </TableCell>
     </TableRow>
   ));
@@ -42,6 +42,7 @@ TableBody.propTypes = {
     })
   ).isRequired,
   data: PropTypes.arrayOf(PropTypes.object),
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default TableBody;

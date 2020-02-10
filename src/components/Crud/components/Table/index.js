@@ -22,6 +22,7 @@ const Table = ({
   handleChangeRowsPerPage,
   page,
   rowsPerPage,
+  handleDelete,
 }) => {
   return (
     <Container>
@@ -38,7 +39,11 @@ const Table = ({
       </div>
       <TableUI size="small">
         <TableHeader structure={structure} />
-        <TableBody data={data} structure={structure} />
+        <TableBody
+          data={data}
+          structure={structure}
+          handleDelete={handleDelete}
+        />
       </TableUI>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
@@ -57,6 +62,7 @@ Table.propTypes = {
   handleForm: PropTypes.func.isRequired,
   handlePage: PropTypes.func.isRequired,
   handleChangeRowsPerPage: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
   structure: PropTypes.arrayOf(PropTypes.object).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   page: PropTypes.number.isRequired,
