@@ -13,7 +13,16 @@ import MaterialUI from '../MaterialUI';
 
 import { Container } from './styles';
 
-const Table = ({ handleForm, structure, data, nextPage, previousPage }) => {
+const Table = ({
+  handleForm,
+  structure,
+  data,
+  dataTotal,
+  handlePage,
+  handleChangeRowsPerPage,
+  page,
+  rowsPerPage,
+}) => {
   return (
     <Container>
       <MaterialUI stickyHeader />
@@ -34,11 +43,11 @@ const Table = ({ handleForm, structure, data, nextPage, previousPage }) => {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={100}
-        rowsPerPage={5}
-        page={0}
-        onChangePage={() => {}}
-        onChangeRowsPerPage={() => {}}
+        count={dataTotal}
+        rowsPerPage={rowsPerPage}
+        page={page - 1}
+        onChangePage={handlePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
       />
     </Container>
   );
@@ -46,10 +55,13 @@ const Table = ({ handleForm, structure, data, nextPage, previousPage }) => {
 
 Table.propTypes = {
   handleForm: PropTypes.func.isRequired,
-  nextPage: PropTypes.func.isRequired,
-  previousPage: PropTypes.func.isRequired,
+  handlePage: PropTypes.func.isRequired,
+  handleChangeRowsPerPage: PropTypes.func.isRequired,
   structure: PropTypes.arrayOf(PropTypes.object).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  page: PropTypes.number.isRequired,
+  rowsPerPage: PropTypes.number.isRequired,
+  dataTotal: PropTypes.number.isRequired,
 };
 
 export default Table;

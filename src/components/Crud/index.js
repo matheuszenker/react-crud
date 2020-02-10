@@ -12,8 +12,10 @@ import Form from './components/Form';
 export default class Crud extends Component {
   state = {
     data: [],
+    dataTotal: 0,
     showForm: false,
     currentPage: 1,
+    rowsPerPage: 10,
   };
 
   componentDidMount() {
@@ -21,13 +23,15 @@ export default class Crud extends Component {
   }
 
   getData = () => {
-    const { currentPage } = this.state;
+    const { currentPage, rowsPerPage } = this.state;
 
-    axios.get(`${this.props.url}?page=${currentPage}`).then(res => {
-      const { data, headers } = res;
-      console.log(headers);
-      this.setState({ data: data.data });
-    });
+    axios
+      .get(`${this.props.url}?page=${currentPage}&limit=${rowsPerPage}`)
+      .then(res => {
+        const { data, headers } = res;
+        console.log(headers);
+        this.setState({ data: data.data, dataTotal: data.total });
+      });
   };
 
   handleForm = () => {
@@ -36,32 +40,18 @@ export default class Crud extends Component {
     }));
   };
 
-  handlePrevPage = () => {
-    if (this.state.currentPage > 1) {
-      this.setState(
-        prevState => ({
-          currentPage: prevState.currentPage - 1,
-        }),
-        () => {
-          this.getData();
-        }
-      );
-    }
+  handlePage = (event, page) => {
+    this.setState({ currentPage: page + 1 }, () => this.getData());
   };
 
-  handleNextPage = () => {
-    this.setState(
-      prevState => ({
-        currentPage: prevState.currentPage + 1,
-      }),
-      () => {
-        this.getData();
-      }
+  handleChangeRowsPerPage = event => {
+    this.setState({ currentPage: 1, rowsPerPage: event.target.value }, () =>
+      this.getData()
     );
   };
 
   render() {
-    const { data } = this.state;
+    const { data, currentPage, rowsPerPage, dataTotal } = this.state;
     const { structure } = this.props;
 
     const theme = createMuiTheme({}, ptBR);
@@ -75,8 +65,11 @@ export default class Crud extends Component {
             handleForm={this.handleForm}
             data={data}
             structure={structure}
-            nextPage={this.handleNextPage}
-            previousPage={this.handlePrevPage}
+            dataTotal={dataTotal}
+            page={currentPage}
+            rowsPerPage={rowsPerPage}
+            handlePage={this.handlePage}
+            handleChangeRowsPerPage={this.handleChangeRowsPerPage}
           />
         );
       }
