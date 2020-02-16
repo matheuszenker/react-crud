@@ -18,7 +18,14 @@ const Input = ({ field, handleFieldValue, values }) => {
         />
       );
     case 'number':
-      return <Number label={field.alias} name={field.column} />;
+      return (
+        <Number
+          label={field.alias}
+          name={field.column}
+          handleFieldValue={handleFieldValue}
+          values={values}
+        />
+      );
     case 'select':
       return (
         <Select
@@ -59,7 +66,7 @@ Input.propTypes = {
     }),
   }),
   handleFieldValue: PropTypes.func.isRequired,
-  values: PropTypes.arrayOf(PropTypes.object),
+  values: PropTypes.object.isRequired,
 };
 
 export default Input;

@@ -35,7 +35,7 @@ Date.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
   handleFieldValue: PropTypes.func.isRequired,
-  values: PropTypes.arrayOf(PropTypes.object),
+  values: PropTypes.object.isRequired,
 };
 
 export default Date;

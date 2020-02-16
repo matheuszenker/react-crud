@@ -6,9 +6,13 @@ import MaterialUI from '../MaterialUI';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
+import axios from 'axios';
 import MomentUtils from '@date-io/moment';
+import moment from 'moment';
 
 import Input from './components/Input';
 
@@ -19,7 +23,8 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      fieldValues: [],
+      fieldValues: {},
+      loading: false,
     };
   }
 
@@ -31,8 +36,36 @@ class Form extends Component {
     this.setState({ fieldValues });
   };
 
-  render() {
+  handleSubmit = () => {
     const { fieldValues } = this.state;
+    const { url } = this.props;
+
+    const values = {};
+
+    Object.entries(fieldValues).map(field => {
+      if (moment.isMoment(field[1])) {
+        values[field[0]] = field[1].format('YYYY-MM-DD HH:mm:ss');
+      } else {
+        values[field[0]] = field[1];
+      }
+    });
+
+    this.setState({ loading: true });
+
+    axios
+      .post(url, values)
+      .then(response => {
+        this.setState({ loading: false });
+        console.log(response);
+      })
+      .catch(error => {
+        this.setState({ loading: false });
+        console.log(error);
+      });
+  };
+
+  render() {
+    const { fieldValues, loading } = this.state;
     const { handleForm, structure } = this.props;
 
     const fields = structure.map((field, index) => (
@@ -59,8 +92,16 @@ class Form extends Component {
                 {fields}
               </MuiPickersUtilsProvider>
               <Grid item xs={12}>
-                <Button variant="contained" color="primary">
-                  Send
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={this.handleSubmit}
+                >
+                  {loading ? (
+                    <CircularProgress size={23} color="inherit" /> // Size 14 works pretty well
+                  ) : (
+                    <Typography>Send</Typography>
+                  )}
                 </Button>
               </Grid>
             </Grid>
@@ -79,6 +120,7 @@ Form.propTypes = {
       column: PropTypes.string.isRequired,
     })
   ).isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default Form;

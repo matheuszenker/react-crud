@@ -82,13 +82,13 @@ export default class Crud extends Component {
       alertError,
       alertSuccess,
     } = this.state;
-    const { structure } = this.props;
+    const { structure, url } = this.props;
 
     const theme = createMuiTheme({}, ptBR);
 
     const formTable = () => {
       if (this.state.showForm) {
-        return <Form handleForm={this.handleForm} structure={structure} />;
+        return <Form handleForm={this.handleForm} structure={structure} url={url}/>;
       } else {
         return (
           <Table
